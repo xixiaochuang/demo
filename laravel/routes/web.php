@@ -12,11 +12,11 @@
 */
 
 Route::get('/', function () {
+
     return view('welcome');
 });
 
 Route::get('index',"IndexController@index");
-
 
 
 Route::get('read',"IndexController@read");
@@ -26,3 +26,5 @@ Route::group(['prefix'=>'app','middleware'=>'jwtAuto'],function (){
 });
 
 Route::post('login','LoginController@index');
+
+Route::get('demo/index',"DemoLoginController@login");

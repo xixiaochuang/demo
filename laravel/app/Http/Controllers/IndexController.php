@@ -14,7 +14,12 @@ class IndexController extends Controller
 {
     public function index(Request $request)
     {
-//        =$request->token ?? "123165465";
+        echo $_SERVER["HTTP_REFERER"];exit;
+        dd($_SERVER['SERVER_SOFTWARE']);
+      $res= $_SERVER['SERVER_NAME'] == "www.1811blog.com" ? 123 :  1234;
+
+
+      echo $res;exit;
         $token =jwtAuto::instantf()->setid(1)->encode()->GetToken();
 //        echo jwtAuto::instantf()->setToken($token)->decode();exit;
 //        return view('index');
